@@ -1,6 +1,7 @@
 # Files
 /node_modules
 /public/build
+/karma_html
 
 # Icon must ends with two \r.
 Icon

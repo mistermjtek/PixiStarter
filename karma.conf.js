@@ -1,17 +1,16 @@
 module.exports = function(config) {
   config.set({
-    browsers: ['PhantomJS'],
     files: [
-      // TODO: Set up Karma for use with pixi.js
-      // 'public/lib/pixi.js',
-      { pattern: 'tests.webpack.js', watched: false },
+      'public/lib/**/*.js',
+      'public/assets/**/*.js',
+      'test/**/*.js'
     ],
-    frameworks: ['jasmine'],
     preprocessors: {
-      'tests.webpack.js': ['webpack']
+      'test/*.js': ['webpack']
     },
-    reporters: ['progress'],
-    singleRun: true,
+    browser: ['Chrome'],
+    frameworks: ['jasmine'],
+    reporters: ['progress', 'html'],
     webpack: {
       module: {
         loaders: [
@@ -20,11 +19,16 @@ module.exports = function(config) {
       },
       resolve: {
         extensions: ['','.js']
-      },
-      watch: true
+      }
     },
     webpackServer: {
       noInfo: true
-    }
+    },
+    plugins: [
+      require('karma-webpack'),
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-jasmine-html-reporter'
+    ]
   });
 };

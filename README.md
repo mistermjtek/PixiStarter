@@ -3,9 +3,12 @@
 
 # Usage
   - `npm install`
-  - `npm test` (WARNING: DOES NOT IMPORT PIXI CORRECTLY)
   - `npm start`
   - Visit on localhost:3000
+
+# Testing
+  - `npm test`
+  - Visit on localhost:9876
 
 # Features
   - Compiles and runs with es6.
@@ -14,4 +17,5 @@
   - Server is set up to run Pixi.js without a hitch!
 
 # Roadmap
-  - WE NEED KARMA TESTING TO WORK WITH PIXI.JS FILES
+  - Better organization for the sample game.
+  - More beautiful testing and automation story.
